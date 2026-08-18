@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Diff Drive Plugin -->
+  <gazebo>
+    <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
+      <!-- Cleaned up trailing spaces in joint names -->
+      <left_joint>left_wheel_back_joint</left_joint>
+      <right_joint>right_wheel_back_joint</right_joint>
+      <left_joint>left_wheel_front_joint</left_joint>
+      <right_joint>right_wheel_front_joint</right_joint>
+      
+      <wheel_separation>0.525</wheel_separation>
+      <wheel_radius>0.05</wheel_radius>              
+      <max_wheel_torque>200</max_wheel_torque>
+      <max_wheel_acceleration>10.0</max_wheel_acceleration>
+      
+      <odom_frame>odom</odom_frame>
+      <robot_base_frame>base_link</robot_base_frame>
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>true</publish_odom_tf>        
+      <topic>/cmd_vel</topic>
+    </plugin>
+  </gazebo>
+
+  <!-- Joint State Publisher Plugin (Moved OUTSIDE the diff drive plugin) -->
+  <gazebo>
+    <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
+      <topic>joint_states</topic> <!-- Optional: Specifies the topic to publish to -->
+    </plugin>
+  </gazebo>
+
+</robot>

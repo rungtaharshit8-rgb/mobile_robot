@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="robot">
+
+    <xacro:include filename="basicmodel.urdf.xacro" />
+    <xacro:include filename="gazebo.urdf.xacro" />
+    <xacro:include filename="inertial.urdf.xacro" />
+    <xacro:include filename="lidar.urdf.xacro" />
+    <!--<xacro:include filename="depth_cam.urdf.xacro" />-->
+    <!-- <xacro:include filename="bumper.urdf.xacro" />-->
+    <xacro:include filename="IMU.urdf.xacro" />
+    <xacro:include filename="camera.urdf.xacro" />
+</robot>

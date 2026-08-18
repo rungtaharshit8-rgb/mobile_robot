@@ -1,0 +1,15 @@
+explore_node:
+  ros__parameters:
+    use_sim_time: true
+    robot_base_frame: base_link
+    costmap_topic: /global_costmap/costmap
+    costmap_updates_topic: /global_costmap/costmap_updates
+    visualize: true                # publishes explore/frontiers marker array for RViz
+    planner_frequency: 0.33         # pick a new frontier goal every ~3s
+    progress_timeout: 30.0          # give up on a frontier goal after 30s of no progress
+    potential_scale: 2.0            # was 3.0 -- was overweighting "nearest" over "most new area revealed"
+    orientation_scale: 0.0
+    gain_scale: 3.0                 # was 1.0 -- now outweighs potential_scale, so it won't chase trivial close frontiers over ones that expose real unexplored space
+    transform_tolerance: 0.3
+    min_frontier_size: 1.0          # was 0.5 -- filters out blind-spot/noise-scale frontiers close to the robot's own footprint
+    return_to_init: false

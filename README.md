@@ -1,4 +1,4 @@
-# mobile robot
+# Mobile Robot
 
 A ROS 2 Jazzy + Gazebo Harmonic package for a differential-drive robot, supporting two workflows:
 

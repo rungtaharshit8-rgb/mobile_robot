@@ -81,7 +81,7 @@ Brings up Gazebo, the robot, the bridge, and `odom_tf_broadcaster` — **no** `s
 
 ```bash
 # Terminal 1: simulation
-ros2 launch mobile_robot gz_nav2_localization.launch.py
+ros2 launch mobile_robot gz_nav2+localization.launch.py
 
 # Terminal 2: localization + navigation stack
 ros2 launch mobile_robot nav2_launch.py map:=/home/<you>/ros_ws/src/mobile_robot/maps/multi_room_map.yaml
